@@ -20,22 +20,24 @@ import {
 } from '@plone/volto/config';
 
 // Tiles
-import TwoColumnsTileEdit from '~/components/manage/Tiles/TwoColumnsTile/Edit';
-import TwoColumnsTileView from '~/components/manage/Tiles/TwoColumnsTile/View';
+import TwoColumnsTileEdit from '~/components/manage/Tiles/TwoColumnsTile/Edit'
+import TwoColumnsTileView from '~/components/manage/Tiles/TwoColumnsTile/View'
 
-import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit';
-import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View';
+import ImageAndRichTextTileEdit from '~/components/manage/Tiles/ImageAndRichTextTile/Edit'
+import ImageAndRichTextTileView from '~/components/manage/Tiles/ImageAndRichTextTile/View'
+import ContainerTileEdit from '~/components/manage/Tiles/ContainerTile/Edit'
+import ContainerTileView from '~/components/manage/Tiles/ContainerTile/View'
 
 // Display types
-import CountryView from '~/components/CountryView/CountryView';
-import CountryPageView from '~/components/CountryPageView/CountryPageView';
-import HomepageView from '~/components/HomepageView/HomepageView';
+import CountryView from '~/components/CountryView/CountryView'
+import CountryPageView from '~/components/CountryPageView/CountryPageView'
 
 import React from 'react';
 import createInlineStyleButton from 'draft-js-buttons/lib/utils/createInlineStyleButton';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import underlineSVG from '@plone/volto/icons/underline.svg';
 import divideVertical from '@plone/volto/icons/divide-vertical.svg';
+import containerIcon from '@plone/volto/icons/collection.svg'
 
 const Underline = createInlineStyleButton({
   style: 'UNDERLINE',
@@ -58,7 +60,6 @@ export const views = {
     ...defaultViews.layoutViews,
     full_view: CountryView,
     country_tab_view: CountryPageView,
-    homepage_view: HomepageView,
   }
 };
 
@@ -73,15 +74,21 @@ export const tiles = {
     {
       title: 'imageandrichtext',
       icon: divideVertical
+    },
+    {
+      title: 'container',
+      icon: containerIcon
     }
   ],
   defaultTilesViewMap: {
     ...defaultTiles.defaultTilesViewMap,
-    imageandrichtext: ImageAndRichTextTileView
+    imageandrichtext: ImageAndRichTextTileView,
+    container: ContainerTileEdit
   },
   defaultTilesEditMap: {
     ...defaultTiles.defaultTilesEditMap,
-    imageandrichtext: ImageAndRichTextTileEdit
+    imageandrichtext: ImageAndRichTextTileEdit,
+    container: ContainerTileEdit
   },
   // messagesTiles: defaultTiles.messagesTiles,
   // requiredTiles: defaultTiles.requiredTiles,
