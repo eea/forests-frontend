@@ -26,6 +26,7 @@ const defaultRoutes = routes[0].routes;
 const PREFETCH_ROUTER_LOCATION_CHANGE = 'PREFETCH_ROUTER_LOCATION_CHANGE';
 
 const matchCurrentPath = path => {
+  // TODO: use ContentViews support from Volto
   // const pathsList = ['/', '/**'];
   let alreadyMatched;
 
@@ -54,7 +55,7 @@ const precacheContentStart = ({ dispatch, getState }) => next => action => {
     case '@@router/LOCATION_CHANGE':
       if (action.payload?.location?.state?.isFromLogin) return next(action);
 
-      // console.log('action', action.type);
+      console.log('precacheContentStart', action.type);
       if (!action.payload?.prefetched) {
         const path = action.payload.location.pathname;
         // TODO: use getBaseUrl based matching
@@ -92,7 +93,7 @@ const precacheContentEnd = ({ dispatch, getState }) => next => action => {
   const type = `${PREFETCH_ROUTER_LOCATION_CHANGE}_SUCCESS`;
 
   if (action.type === type) {
-    // console.debug('prefetch action end', action);
+    console.debug('precacheContentEnd', action.type);
     return dispatch({
       ...action.originalAction,
       payload: {

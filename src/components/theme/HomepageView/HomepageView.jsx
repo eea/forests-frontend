@@ -50,7 +50,7 @@ class View extends Component {
     /**
      * Action to get the content
      */
-    getContent: PropTypes.func.isRequired,
+    // getContent: PropTypes.func.isRequired,
     /**
      * Pathname of the object
      */
@@ -123,11 +123,11 @@ class View extends Component {
    * @returns {undefined}
    */
   componentWillMount() {
-    this.props.listActions(getBaseUrl(this.props.pathname));
-    this.props.getContent(
-      getBaseUrl(this.props.pathname),
-      this.props.versionId,
-    );
+    // this.props.listActions(getBaseUrl(this.props.pathname));
+    // this.props.getContent(
+    //   getBaseUrl(this.props.pathname),
+    //   this.props.versionId,
+    // );
   }
 
   /**
@@ -138,19 +138,19 @@ class View extends Component {
    */
   componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
-      this.props.listActions(getBaseUrl(nextProps.pathname));
-      this.props.getContent(
-        getBaseUrl(nextProps.pathname),
-        this.props.versionId,
-      );
+      // this.props.listActions(getBaseUrl(nextProps.pathname));
+      // this.props.getContent(
+      //   getBaseUrl(nextProps.pathname),
+      //   this.props.versionId,
+      // );
     }
 
-    if (nextProps.actions.object_buttons) {
-      const objectButtons = nextProps.actions.object_buttons;
-      this.setState({
-        hasObjectButtons: !!objectButtons.length,
-      });
-    }
+    // if (nextProps.actions.object_buttons) {
+    //   const objectButtons = nextProps.actions.object_buttons;
+    //   this.setState({
+    //     hasObjectButtons: !!objectButtons.length,
+    //   });
+    // }
   }
 
   /**
@@ -253,9 +253,10 @@ class View extends Component {
             <p>
               Forests and their ecosystems are currently at the top of policy
               agenda and public attention in the context of the protection of
-              biodiversity, adaptation and mitigation against climate change impacts, and renewable energy. Sustainable forest
-              management is required to balance the environmental, social and
-              economic pillars of sustainability.
+              biodiversity, adaptation and mitigation against climate change
+              impacts, and renewable energy. Sustainable forest management is
+              required to balance the environmental, social and economic pillars
+              of sustainability.
             </p>
           </div>
 
@@ -268,9 +269,7 @@ class View extends Component {
               </div>
               <div className="area-content">
                 <h5 className="area-title">
-                  <Link to="/topics/forest-basic-data">
-                    Forest basic data
-                  </Link>
+                  <Link to="/topics/forest-basic-data">Forest basic data</Link>
                 </h5>
               </div>
             </div>
@@ -373,7 +372,7 @@ export default compose(
     }),
     {
       listActions,
-      getContent,
+      // getContent,
     },
   ),
 )(View);

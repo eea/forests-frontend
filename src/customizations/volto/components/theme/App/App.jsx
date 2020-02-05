@@ -172,7 +172,7 @@ export default compose(
     {
       key: 'content',
       promise: ({ location, store: { dispatch } }) =>
-        dispatch(getContent(getBaseUrl(location.pathname))),
+        __SERVER__ && dispatch(getContent(getBaseUrl(location.pathname))),
     },
     {
       key: 'frontpage_slides',
