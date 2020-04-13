@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from '@plone/volto/helpers';
 import { Container } from 'semantic-ui-react';
-import WidthBasedLayoutProvider from 'volto-base/components/theme/LayoutProvider/WidthBasedLayoutProvider';
 import { settings } from '~/config';
 
 const RssView = () => {
@@ -20,4 +19,4 @@ const RssView = () => {
   );
 }
 
-export default WidthBasedLayoutProvider(RssView);
+export default RssView;
