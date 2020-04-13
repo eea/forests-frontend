@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Image, Container } from 'semantic-ui-react';
 import {
@@ -13,22 +13,12 @@ import { getBasePath } from '~/helpers';
 const NewsItem = ({ item }) => {
   const blocksFieldname = getBlocksFieldname(item);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(item);
-  console.log(hasBlocksData(item));
-  console.log(hasBlocksData(item));
-  const prettyDate = time => {
-    let date = new Date(time);
-    const dtf = new Intl.DateTimeFormat('en', {
-      year: 'numeric',
-      month: 'short',
-      day: '2-digit',
-      hour: '2-digit',
-    });
-    const [{ value: mo }, , { value: da }, , { value: ye }] = dtf.formatToParts(
-      date,
-    );
-    console.log(dtf.formatToParts(date));
-    return `${mo} ${da} ${ye}`;
-  };
+  const prettyDate = (time) => {
+  let date = new Date(time)
+  const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit' }) 
+  const  [{ value: mo },,{ value: da },,{ value: ye }] = dtf.formatToParts(date) 
+    return `${mo} ${da} ${ye}`
+  }
 
   const itemPath = urlString => {
     const url = new URL(urlString);
