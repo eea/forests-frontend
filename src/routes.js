@@ -6,6 +6,7 @@
 import { App } from '@plone/volto/components';
 import { defaultRoutes } from '@plone/volto/routes';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
+import RssView from '~/components/theme/RssView/RssView';
 
 import { addonRoutes } from '~/config';
 import SiteMap from '~/components/theme/SiteMap/SiteMap';
@@ -24,6 +25,11 @@ const routes = [
       {
         path: '/',
         component: HomepageView,
+        exact: true,
+      },
+      {
+        path: '/rss',
+        component: RssView,
         exact: true,
       },
       {
