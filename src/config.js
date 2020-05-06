@@ -1,6 +1,5 @@
 import * as voltoConfig from '@plone/volto/config';
-import Forbidden from '@plone/volto/components/theme/Forbidden/Forbidden';
-import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
+import { Forbidden, Unauthorized } from '@plone/volto/components';
 
 import {
   applyConfig as addonsConfig,
